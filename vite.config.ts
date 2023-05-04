@@ -11,9 +11,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    eslintPlugin({
-      fix: true,
-    }),
+    eslintPlugin(),
     stylelint({
       fix: true,
     }),
