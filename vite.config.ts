@@ -1,17 +1,21 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import eslintPlugin from 'vite-plugin-eslint'
 import stylelint from 'vite-plugin-stylelint'
 import path from 'path'
+import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   server: {
     port: 3000,
     open: true,
   },
+  css: {
+    postcss: {
+      plugins: [autoprefixer({})],
+    },
+  },
   plugins: [
     vue(),
-    eslintPlugin(),
     stylelint({
       fix: true,
     }),
